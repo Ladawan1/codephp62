@@ -27,4 +27,3 @@ switch ($a) {
         echo "A";
         break;
 }
-?>
