@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $result = $myconn->query($strSQL);
         if ($result) {
-            echo "Add User Complete";
+            echo "เพิ่มข้อมูลสำเร็จ";
         } else {
-            echo "Add User Denied";
+            echo "ไม่สามารถเพิ่มข้อมูลได้";
         }
     }
 }

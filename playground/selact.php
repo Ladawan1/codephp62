@@ -18,9 +18,11 @@ require_once 'connectdb.php';
 
        <table  border="5" width="100%">
           <tr>
-              <td> ID User</td>
-              <td> User Name</td>
-              <td> Status</td>
+              <td> รหัสผู้ใช้</td>
+              <td> ชื่อผู้ใช้</td>
+              <td> สถานะ</td>
+              <td> แก้ไข</td>
+              <td> ลบ</td>
           </tr>
     <?php
      while ($row = $result->fetch_array()) {
@@ -31,6 +33,8 @@ require_once 'connectdb.php';
              <td> <?php echo $row["id"]?></td>
              <td> <?php echo $row["username"] ?></td>
              <td> <?php echo $row["status"]?></td>
+             <td> Edit</td>
+             <td> <a href="delete.php?id=<?php echo $row["id"]?>">delete</a></td>
          </tr>
          <?php
     }
