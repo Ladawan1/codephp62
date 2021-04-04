@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }else{
         echo "id is null";
     }
-
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $frmUsername = $frmPassword = "";
     $frmUsername = $_POST["username"];
