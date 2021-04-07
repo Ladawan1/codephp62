@@ -1,4 +1,5 @@
 <?php
+include "tamplate\header.html";
 require_once 'connectdb.php';
 
     $strSQL = "SELECT  id, username, status FROM user";
@@ -6,26 +7,20 @@ require_once 'connectdb.php';
      
    
     ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href= "https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-        <title>Document</title>
-    </head>
+ 
     <body>
 
-       <table  border="5" width="100%">
+       <table class="table table-striped table-dark">
+       <thead>
           <tr>
-              <td> รหัสผู้ใช้</td>
-              <td> ชื่อผู้ใช้</td>
-              <td> สถานะ</td>
-              <td> แก้ไข</td>
-              <td> ลบ</td>
+              <th> รหัสผู้ใช้</th>
+              <th> ชื่อผู้ใช้</th>
+              <th> สถานะ</th>
+              <th> แก้ไข</th>
+              <th> ลบ</th>
           </tr>
+       </thead>
+       <tbody>
     <?php
      while ($row = $result->fetch_array()) {
         // echo $row["username"] . "<br>";
@@ -41,7 +36,12 @@ require_once 'connectdb.php';
          <?php
     }
     ?>
+        </tbody>
         </table>
+        <a href="insert.php">เพิ่มผู้ใช้</a>
+    <?php
+        include "tamplate\Footer.html";
+        ?>
     </body>
 
     </html>

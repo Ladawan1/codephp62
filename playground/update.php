@@ -1,4 +1,5 @@
 <?php
+include "tamplate\header.html";
 require_once 'connectdb.php';
 $id = " ";
 $username = " ";
@@ -15,9 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         } else {
             echo "ไม่สามารถลบข้อมูลได้";
         }
-    }else{
-        echo "id is null";
     }
+    // // else{
+    //     echo "id is null";
+    // }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $frmUsername = $frmPassword = "";
@@ -36,31 +38,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
 <body>
-    <form action="update.php" method="post">
-        <table border="1">
-            <tr>
-                <td>username</td>
-                <td><input type="text" name="username" value="<?=$username ?>"></td>
-            </tr>
-            <tr>
-                <td>status</td>
-                <td><input type="text" name="status" value="<?=$status?>"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="save"></td>
-            </tr>
-        </table>
-    </form>
+<form action="update.php" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">User name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" value="<?=$username ?>">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Status</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="status" value="<?=$status?>">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">save</button>
+</form>
+    <?php
+        include "tamplate\Footer.html";
+        ?>
 </body>
 </html>
