@@ -25,7 +25,7 @@ require_once 'connectdb.php';
      while ($row = $result->fetch_array()) {
         // echo $row["username"] . "<br>";
         ?>
-
+ 
          <tr>
              <td> <?php echo $row["id"]?></td>
              <td> <?php echo $row["username"] ?></td>
